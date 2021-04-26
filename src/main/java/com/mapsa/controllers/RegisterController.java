@@ -7,10 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/index.do")
-public class HomeController extends HttpServlet {
+@WebServlet("/student-register.do")
+public class RegisterController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req,resp);
+        String name = req.getParameter("name");
+        String family = req.getParameter("family");
+        String ageStr = req.getParameter("age");
     }
 }
